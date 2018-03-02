@@ -1,0 +1,323 @@
+html
+  margin: 0px
+  padding: 0px
+  font-family: Roboto, sans-serif, Arial
+  -webkit-font-smoothing: antialiased !important
+  font-size: 13px
+  color: #616161
+  background-color: rgba(43, 43, 43, 0.04)
+
+body
+  margin: 71px 60px 0px 60px !important
+
+*
+  box-sizing: border-box
+
+  &::after
+    box-sizing: inherit
+
+  &::before
+    box-sizing: inherit
+
+
+header
+  background: #fff
+  color: #616161
+  font-family: Roboto,Arial,sans-serif
+  font-size: 12px
+  height: 56px
+  left: 0
+  padding: 0
+  position: fixed
+  right: 0
+  top: 0
+  transition: margin-top 240ms cubic-bezier(0.4, 0, 0.2, 1)
+  z-index: 103
+  border-bottom: 1px solid rgb(237, 237, 237)
+
+  .nav-bar-container
+    display: flex
+    width: 98%
+    height: 100%
+    margin: auto
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+
+    #nav-bar-left
+      display: inherit
+
+      img
+        padding-left: 20px
+        width: 120px
+        height: 56px
+
+    img
+      width: 120px
+      height: 56px
+
+    #nav-bar-right
+      align-items: center
+      display: inherit
+
+      p
+        padding: 5px
+
+#header-username
+  padding-right: 20px
+  color: #464d51 !important
+  transition: all 500ms cubic-bezier(0.265, 0.390, 0.245, 0.880)
+
+  &:hover
+    color: #059dfa !important
+    transition: all 500ms cubic-bezier(0.265, 0.390, 0.245, 0.880)
+
+.material-icons
+    text-decoration: none !important
+
+a
+  text-decoration: none
+
+
+.header-button-container
+  margin: auto
+  display: flex
+  cursor: pointer
+  flex-shrink: 1
+  justify-content: center
+  border: 1px solid transparent
+  border-radius: 5px
+  align-items: center
+  padding: 0px 3px
+  height: 48px
+  transition: all 500ms cubic-bezier(0.265, 0.390, 0.245, 0.880)
+
+  p
+    display: flex
+    color: #464d51
+
+  &:hover
+    border: 1px solid #059dfa
+    transition: all 500ms cubic-bezier(0.265, 0.390, 0.245, 0.880)
+
+
+.header-button
+  margin: auto
+  border: 1px solid transparent
+
+  i
+    text-align: center
+    color: #464d51
+    display: block
+
+
+#nav-bar-right
+
+  a
+    color: #242424
+    transition: all 240ms ease
+
+    &:hover
+      color: #00a0ff !important
+      transition: all 240ms ease
+
+.shadow
+  position: fixed
+  padding: 0px
+  margin: 0px
+  width: 100%
+  height: 100%
+  background-color: rgba(0,0,0,0.44)
+  visibility: hidden
+  transition: opacity 240ms cubic-bezier(0.4, 0, 0.2, 1)
+
+#nav-open
+  position: fixed
+  width: 256px
+  height: 100%
+  background-color: #fff
+  box-shadow: 3px 0 10px 0 rgba(0,0,0,0.28)
+  z-index: 2
+  left: -300px
+  transition: all 500ms cubic-bezier(0.365, 0.680, 0.335, 0.945)
+
+
+.nav-open-container
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 4px
+  border-bottom: 1px solid rgb(237, 237, 237)
+  height: 57px
+  cursor: pointer
+
+  .header-logo
+    padding-left: 35px
+
+    img
+      width: 120px
+      height: 56px
+
+
+.nav-close-button
+    margin: auto
+    font-family: 'Material Icons Extended'
+    font-weight: normal
+    font-style: normal
+    line-height: 1
+    letter-spacing: normal
+    text-transform: none
+    display: block
+    white-space: nowrap
+    word-wrap: normal
+    direction: ltr
+    -webkit-font-feature-settings: 'liga'
+    -webkit-font-smoothing: antialiased
+    color: #464d51
+
+
+.nav-close-button-wrapper
+  display: flex
+  align-self: center
+  position: relative
+  height: 50px
+  width: 54px
+  border: 1px solid transparent
+  border-radius: 5px
+  transition: all 500ms cubic-bezier(0.365, 0.680, 0.335, 0.945)
+
+  &:hover
+    border: 1px solid #059dfa
+    border-radius: 5px
+    transition: all 500ms cubic-bezier(0.365, 0.680, 0.335, 0.945)
+
+
+.nav-body
+  display: flex
+
+.nav-slider
+    background: #0091ea
+    height: 42px
+    position: absolute
+    left: 0
+    top: 69px
+    width: 4px
+    transition: transform 160ms cubic-bezier(0.4, 0, 0.2, 1)
+
+.nav-links
+  margin: 0px
+  padding: 0px
+  display: flex
+  flex-direction: column
+  overflow: hidden
+  width: 100%
+
+  ul
+    padding-top: 12px
+    padding-left: 0px
+    width: 100%
+    padding-bottom: 12px
+    border-bottom: 1px solid rgb(237, 237, 237)
+
+    li
+      margin: auto
+      padding: 12px 0px
+      font-size: 14px
+      color: #464d51
+      text-decoration: none
+
+      &:hover
+        color: #059dfa !important
+
+        .open-header-icons
+          visibility: visible
+          transition: all 200ms ease-in-out
+          -webkit-transform: scale(1)
+          -webkit-backface-visibility: hidden
+
+  &:first-child
+    padding-top: 0px
+
+
+.open-header-icons
+  visibility: hidden
+  -webkit-transform: scale(0.000001)
+  margin-right: 20px
+  float: right
+  font-size: 1.3em !important
+
+
+.parent
+  width: 100%
+  height: 500px
+  margin-bottom: 15px
+  background-color: #fff
+
+  .child
+    width: 100%
+    height: 100%
+
+
+.hug
+  margin: 0px
+  padding: 0px
+  display: flex
+
+.float-right
+  float: right!important
+
+
+#nav-name
+
+  span
+    padding: 0px !important
+    text-align: center
+    color: #7d7d7d
+    font-family: Roboto
+    font-size: 16px
+    border-bottom: none !important
+
+
+footer
+  background-color: #0c0c0c
+  padding: 10px 10px 10px 10px
+  overflow: auto
+  font-size: 14px
+
+  #footer
+    display: inline-block
+    margin-right: 0px
+
+    img
+      max-width: 160px
+
+    h2
+      padding-bottom: 30px
+      color: #7d7d7d
+      margin: 0px !important
+      font-family: inherit
+      font-weight: 500
+      line-height: 1.1
+
+    span
+      display: block
+      border-bottom: 1px solid #292b2c
+      padding: 5px 0px
+
+    a
+      display: block
+      color: #7d7d7d
+      text-decoration: none
+
+      &:hover
+        color: #0ebeff
+        transition: ease-in-out 0.2s
+
+.col-lg-3
+  margin: auto
+  padding: 10px
+  position: relative
+  width: 100%
+  min-height: 1px
+  padding-right: 15px
+  padding-left: 15px
