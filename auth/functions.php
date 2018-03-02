@@ -13,12 +13,12 @@
 
         $query = "SELECT * FROM sessions WHERE session_userid = :userid AND session_token = :token AND session_serial = :serial;";
 
-        $userid = $_COOKIE['userid'];
+        $user_id = $_COOKIE['userid'];
         $token = $_COOKIE['token'];
         $serial = $_COOKIE['serial'];
 
         $stmt = $dbh->prepare($query);
-        $stmt->execute(array(':userid' => $userid,
+        $stmt->execute(array(':userid' => $user_id,
                              ':token' => $token,
                              ':serial' => $serial));
 
@@ -42,7 +42,7 @@
 
     public static function createRecord($dbh, $user_id, $user_username) {
 
-      $query = "INSERT INTO sessions (session_userid, session_token, session_serial) VALUES (:user_id, :token, :serial;)";
+      $query = "INSERT INTO sessions (session_userid, session_token, session_serial) VALUES (:user_id, :token, :serial);";
 
       $dbh->prepare("DELETE FROM sessions WHERE session_userid = :session_userid;")->execute(array(':session_userid' => $user_id));
 
@@ -53,7 +53,7 @@
         func::createSession($user_username, $user_id, $token, $serial);
 
         $stmt = $dbh->prepare($query);
-        $stmt->execute(array('user_id' => $user_id,
+        $stmt->execute(array('userid' => $user_id,
                              ':token' => $token,
                              ':serial' => $serial));
     }
@@ -69,10 +69,10 @@
 
     public static function deleteCookie() {
 
-      setCookie('userid', '', time() -1, "/");
-      setCookie('username', '', time() -1, "/");
-      setCookie('token', '', time() -1, "/");
-      setCookie('serial', '', time() -1, "/");
+      setCookie('userid', $user_id, time() -1, "/");
+      setCookie('username', $user_username, time() -1, "/");
+      setCookie('token', $token, time() -1, "/");
+      setCookie('serial', $serial, time() -1, "/");
       session_destroy();
 
     }
@@ -85,7 +85,7 @@
 
       $_SESSION['userid'] = $user_id;
       $_SESSION['token'] = $token;
-      $_SESSION['serial'] = $seroa;;
+      $_SESSION['serial'] = $serial;
       $_SESSION['username'] = $user_username;
 
     }
