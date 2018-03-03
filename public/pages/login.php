@@ -28,13 +28,19 @@
         else {
 
           echo '
-            <form action="login.php" method="post">
+            <div id="login">
+            <i style="font-size: 10em; padding: 15px 15px 0px 15px; color: #464d51;"class="material-icons">account_circle</i>
+            <div id="login-panel">
+            <p style="padding: 0px; margin: 0px;">Member Login</p>
+            <form autocomplete="off" action="login.php" method="post">
               <label>Username</label></br>
               <input type="text" name="username"/> <br/>
               <label>Password</label><br/>
               <input type="password" name="password"/></br>
               <input type="submit" value="login"/>
             </form>
+            </div>
+            </div>
           ';
         }
       }

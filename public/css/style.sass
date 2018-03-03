@@ -277,6 +277,64 @@ a
     font-size: 16px
     border-bottom: none !important
 
+#login
+  display: flex
+  align-items: center
+  flex-direction: column
+  margin: auto
+  text-align: center
+  float: center
+
+  #login-panel
+    display: flex
+    flex-direction: column
+    margin: 15px
+    min-width: 30vw
+    height: 300px
+    p
+      font-size: 2em
+      text-transform: uppercase
+      color: #7d7d7d
+
+    form
+      padding-top: 15px
+
+      input
+        outline: none
+        display: block
+        background: #FFFFFF
+        width: 100%
+        border: 1px solid rgb(229, 229, 229)
+        border-radius: 4px
+        box-sizing: border-box
+        padding: 12px 20px
+        //color: rgba(#000000, 0.6)
+        font-family: inherit
+        font-size: inherit
+        line-height: inherit
+        transition: 0.3s ease
+
+        &:focus
+          color: rgba(#000000, 0.8)
+
+
+        .two &
+          color: #FFFFFF
+
+          &:focus
+            color: #FFFFFF
+
+
+input:-webkit-autofill
+
+  -webkit-box-shadow: 0 0 0 50px white inset
+
+
+
+
+
+
+
 
 footer
   background-color: #0c0c0c
