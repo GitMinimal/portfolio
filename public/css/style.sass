@@ -284,6 +284,7 @@ a
   margin: auto
   text-align: center
   float: center
+  cursor: default
 
   #login-panel
     display: flex
@@ -291,13 +292,52 @@ a
     margin: 15px
     min-width: 30vw
     height: 300px
+
     p
       font-size: 2em
       text-transform: uppercase
       color: #7d7d7d
+      cursor: default
 
     form
       padding-top: 15px
+
+      #remember_me_checkbox
+        display: inline-block
+        float: left
+        padding-top: 10px
+
+        l
+          color: #616161
+          cursor: default
+
+        input
+          width: 25px
+          height: 15px
+          float: left
+          margin-top: 5px
+          margin: auto
+
+      label
+        font-size: 14px
+
+      div
+
+        div
+          display: block
+          text-align: right
+          padding-top: 10px
+          padding-right: 2px
+
+          a
+            i
+              transition: 0.3s ease
+              color: #464d51
+              cursor: pointer
+
+              &:hover
+                transition: 0.3s ease
+                color: #0ebeff
 
       input
         outline: none
@@ -307,12 +347,12 @@ a
         border: 1px solid rgb(229, 229, 229)
         border-radius: 4px
         box-sizing: border-box
+        margin-top: 5px
         padding: 12px 20px
-        //color: rgba(#000000, 0.6)
-        font-family: inherit
-        font-size: inherit
+        font-size: 14px
         line-height: inherit
         transition: 0.3s ease
+        cursor: pointer
 
         &:focus
           color: rgba(#000000, 0.8)
@@ -323,6 +363,15 @@ a
 
           &:focus
             color: #FFFFFF
+
+#login_button
+
+  &:hover
+    transition: 0.3s ease
+    border-color: #0ebeff !important
+    color: #0ebeff
+
+
 
 
 input:-webkit-autofill

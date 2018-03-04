@@ -88,21 +88,37 @@ a { text-decoration: none; }
 
 #nav-name span { padding: 0px !important; text-align: center; color: #7d7d7d; font-family: Roboto; font-size: 16px; border-bottom: none !important; }
 
-#login { display: flex; align-items: center; flex-direction: column; margin: auto; text-align: center; float: center; }
+#login { display: flex; align-items: center; flex-direction: column; margin: auto; text-align: center; float: center; cursor: default; }
 
 #login #login-panel { display: flex; flex-direction: column; margin: 15px; min-width: 30vw; height: 300px; }
 
-#login #login-panel p { font-size: 2em; text-transform: uppercase; color: #7d7d7d; }
+#login #login-panel p { font-size: 2em; text-transform: uppercase; color: #7d7d7d; cursor: default; }
 
 #login #login-panel form { padding-top: 15px; }
 
-#login #login-panel form input { outline: none; display: block; background: #FFFFFF; width: 100%; border: 1px solid #e5e5e5; border-radius: 4px; box-sizing: border-box; padding: 12px 20px; font-family: inherit; font-size: inherit; line-height: inherit; transition: 0.3s ease; }
+#login #login-panel form #remember_me_checkbox { display: inline-block; float: left; padding-top: 10px; }
+
+#login #login-panel form #remember_me_checkbox l { color: #616161; cursor: default; }
+
+#login #login-panel form #remember_me_checkbox input { width: 25px; height: 15px; float: left; margin-top: 5px; margin: auto; }
+
+#login #login-panel form label { font-size: 14px; }
+
+#login #login-panel form div div { display: block; text-align: right; padding-top: 10px; padding-right: 2px; }
+
+#login #login-panel form div div a i { transition: 0.3s ease; color: #464d51; cursor: pointer; }
+
+#login #login-panel form div div a i:hover { transition: 0.3s ease; color: #0ebeff; }
+
+#login #login-panel form input { outline: none; display: block; background: #FFFFFF; width: 100%; border: 1px solid #e5e5e5; border-radius: 4px; box-sizing: border-box; margin-top: 5px; padding: 12px 20px; font-size: 14px; line-height: inherit; transition: 0.3s ease; cursor: pointer; }
 
 #login #login-panel form input:focus { color: rgba(0, 0, 0, 0.8); }
 
 .two #login #login-panel form input { color: #FFFFFF; }
 
 .two #login #login-panel form input:focus { color: #FFFFFF; }
+
+#login_button:hover { transition: 0.3s ease; border-color: #0ebeff !important; color: #0ebeff; }
 
 input:-webkit-autofill { -webkit-box-shadow: 0 0 0 50px white inset; }
 

@@ -37,7 +37,11 @@
               <input type="text" name="username"/> <br/>
               <label>Password</label><br/>
               <input type="password" name="password"/></br>
-              <input type="submit" value="login"/>
+              <input id="login_button" type="submit" value="login"/>
+
+              <div id="remember_me_checkbox"><input type="checkbox" "name="remember" value="1"><l>Remember Me</l></div>
+
+              <div id="forgot_password"><div><a><i>Forgot Password?</i></a></div></div>
             </form>
             </div>
             </div>
