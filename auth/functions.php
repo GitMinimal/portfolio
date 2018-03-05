@@ -5,10 +5,12 @@
     public static function checkLoginState($dbh) {
 
       if(!isset($_SESSION)) {
-
+        ini_set();
         session_start();
 
       }
+
+
       if (isset($_COOKIE['userid']) && isset($_COOKIE['token']) && isset($_COOKIE['serial'])) {
 
         $query = "SELECT * FROM sessions WHERE session_userid = :userid AND session_token = :token AND session_serial = :serial;";
@@ -60,11 +62,18 @@
 
     public static function createCookie($user_username, $user_id, $token, $serial) {
 
-      setCookie('userid', $user_id, time() + (86400) * 30, "/");
-      setCookie('username', $user_username, time() + (86400) * 30, "/");
-      setCookie('token', $token, time() + (86400) * 30, "/");
-      setCookie('serial', $serial, time() + (86400) * 30, "/");
-
+      if(isset($_POST['remember'])) {
+        setCookie('userid', $user_id, time() + (86400) * 30, "/");
+        setCookie('username', $user_username, time() + (86400) * 30, "/");
+        setCookie('token', $token, time() + (86400) * 30, "/");
+        setCookie('serial', $serial, time() + (86400) * 30, "/");
+        setCookie('remember', 'Remember Me', time() + (86400) * 30, "/");
+      } else {
+        setCookie('userid', $user_id, time() -1, "/");
+        setCookie('username', $user_username, time() -1, "/");
+        setCookie('token', $token, time() -1, "/");
+        setCookie('serial', $serial, time() -1, "/");
+      }
     }
 
     public static function deleteCookie() {
@@ -80,6 +89,7 @@
     public static function createSession($user_username, $user_id, $token, $serial) {
 
       if (!isset($_SESSION)) {
+          ini_set();
           session_start();
       }
 

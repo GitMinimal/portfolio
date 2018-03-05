@@ -32,23 +32,25 @@
             <i style="font-size: 10em; padding: 15px 15px 0px 15px; color: #464d51;"class="material-icons">account_circle</i>
             <div id="login-panel">
             <p style="padding: 0px; margin: 0px;">Member Login</p>
-            <form autocomplete="off" action="login.php" method="post">
+
+            <form autocomplete="off" method="post">
               <label>Username</label></br>
-              <input type="text" name="username"/> <br/>
+              <input maxlength="40" type="text" name="username"/> <br/>
               <label>Password</label><br/>
               <input type="password" name="password"/></br>
-              <input id="login_button" type="submit" value="login"/>
+              <input id="login_button" type="submit" maxlength="50" value="login"/>
 
-              <div id="remember_me_checkbox"><input type="checkbox" "name="remember" value="1"><l>Remember Me</l></div>
-
+              <div id="remember_me_checkbox">
+              <input type="checkbox" name="remember" value="checked"><l>Remember Me</l>
+              </div>
               <div id="forgot_password"><div><a><i>Forgot Password?</i></a></div></div>
             </form>
             </div>
+
             </div>
           ';
-        }
-      }
-      else {
+          }
+
         header("../index.php");
       }
 
