@@ -35,9 +35,9 @@
 
             <form autocomplete="off" method="post">
               <label>Username</label></br>
-              <input maxlength="40" type="text" name="username"/> <br/>
+              <input style="font-size: 16px" placeholder="Username" maxlength="40" type="text"  id="username" name="username"/> <br/>
               <label>Password</label><br/>
-              <input type="password" name="password"/></br>
+              <input style="font-size: 16px" placeholder="Password" type="password" id="password" name="password"/></br>
               <input id="login_button" type="submit" maxlength="50" value="login"/>
 
               <div id="remember_me_checkbox">

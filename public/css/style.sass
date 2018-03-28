@@ -249,7 +249,7 @@ a
 
 .parent
   width: 100%
-  height: 500px
+  height: 600px
   margin-bottom: 15px
   background-color: #fff
 
@@ -283,15 +283,16 @@ a
   flex-direction: column
   margin: auto
   text-align: center
-  float: center
   cursor: default
 
   #login-panel
     display: flex
     flex-direction: column
-    margin: 15px
     min-width: 30vw
     height: 300px
+    padding: 40px
+    margin: 20px
+    border: 1px solid #e5e5e5
 
     p
       font-size: 2em
@@ -299,8 +300,27 @@ a
       color: #616161
       cursor: default
 
+
+
     form
       padding-top: 15px
+
+      input#username
+        background-image: url(../assets/icon_login_user.svg)
+        background-repeat: no-repeat
+        background-position: 6px
+        margin-top: 10px
+        padding-left: 35px
+        font-size: 14px
+
+      input#password
+        background-image: url(../assets/icon_lock_outline.svg)
+        background-repeat: no-repeat
+        background-position: 6px
+        margin-top: 10px
+        padding-left: 35px
+        font-size: 14px
+
 
       #remember_me_checkbox
         display: inline-block
@@ -319,7 +339,7 @@ a
           margin: auto
 
       label
-        font-size: 14px
+        font-size: 18px
 
       div
 
@@ -353,16 +373,7 @@ a
         line-height: inherit
         transition: 0.3s ease
         cursor: pointer
-
-        &:focus
-          color: rgba(#000000, 0.8)
-
-
-        .two &
-          color: #FFFFFF
-
-          &:focus
-            color: #FFFFFF
+        color: #616161
 
 #login_button
   color: #616161

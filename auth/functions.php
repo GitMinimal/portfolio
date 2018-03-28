@@ -100,8 +100,6 @@
 
     }
 
-
-
     public static function createString($len) {
 
       $string = "1ZHESkJNZUEYjH9755M69xx5vYpKpks08TBYgRWzHO632vE8gx6PE51vUy8yA";
