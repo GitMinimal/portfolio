@@ -47,7 +47,21 @@
      <div class="nav-slider" style="top: 214px;"></div>
    </div>
  </div>
-  <div class="shadow"></div>
+ <div class="logout-background">
+     <div class="logout_timer_page">
+       <div id="logout_timer_container">
+         <l>Are you sure you want to logout?</l>
+         <l id="timer">5</l>
+         <a href="javascript:history.go(0)">Cancel</a>
+       </div>
+     </div>
+   </div>
+
+
+
+
+  <div class="shadow">
+  </div>
 
       <div class="nav-bar-container">
         <div id="nav-bar-left">
@@ -71,7 +85,7 @@
 
             if(!empty($_SESSION['username'])) {
                 echo '<l style="color: #464d51">Welcome, </l>'. '<l id="header-username">' .ucfirst($_SESSION['username']) . '!</l>';
-                echo '<a href="/includes/logout.php"><i class="material-icons">power_settings_new</i></a>';
+                echo '<a id="logout" href="/includes/logout.php"><i class="material-icons">power_settings_new</i></a>';
               } else {
                 echo '<a href="/pages/login.php">Login</a><p>|</p><a href="/pages/register.php">Register</a>';
               }

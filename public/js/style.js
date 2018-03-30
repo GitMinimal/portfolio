@@ -22,3 +22,27 @@ $(".nav-links ul li").mouseover(function () {
         top: top,
     }, 250);
 });
+
+
+$('#logout').click (function (e) {
+   e.preventDefault();
+   setTimeout(function () {
+       window.location.href = "../pages/logout.inc.php";
+    }, 5000);
+    $(".logout-background").css('visibility', 'visible');
+    $(".logout_timer_page").css('visibility', 'visible');
+
+    var count=5;
+
+      var counter=setInterval(timer, 1000);
+
+      function timer() {
+        count=count-1;
+
+        if (count <= 0) {
+          clearInterval(counter);
+          return;
+}
+document.getElementById("timer").innerHTML=count;
+}
+});

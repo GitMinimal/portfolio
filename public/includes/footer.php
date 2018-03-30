@@ -1,7 +1,7 @@
 <footer>
     <div class="hug">
       <div class="col-lg-3" id="footer">
-        <img id="nav-name" src="/portfolio/public/assets/logo2.svg"></img>
+        <img id="nav-name" src="/portfolio/public/assets/footer_logo.svg"></img>
       </div>
       <div class="col-lg-3 float-right" id="footer"><h2>Sources</h2>
         <span><a href="">Testing</a></span>

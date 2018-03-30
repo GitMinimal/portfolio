@@ -3,6 +3,11 @@
   <section class="child">
     <?php
 
+    if(isset($_SESSION['username'])) {
+      redirect();
+      exit;
+    }
+
       if (!func::checkLoginState($dbh)) {
 
         if (isset($_POST['username']) && isset($_POST['password'])) {
@@ -24,7 +29,7 @@
             echo func::createString(32);
           }
 
-        }
+      }
         else {
 
           echo '
@@ -50,8 +55,6 @@
             </div>
           ';
           }
-
-        header("../index.php");
       }
 
 

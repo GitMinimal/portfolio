@@ -120,6 +120,10 @@
 
   }
 
+  function redirect() {
+    header('location: http://www.localhost/index.php');
+  }
+
 
 
 
