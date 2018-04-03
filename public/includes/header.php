@@ -1,4 +1,5 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/portfolio/auth/functions.php'; include_once $_SERVER['DOCUMENT_ROOT'] . '/portfolio/auth/config.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,7 +29,7 @@
    <div class="nav-body">
      <ul class="nav-links">
        <ul>
-         <a href="index.php"><li style="padding-left: 40px;">Home</li></a>
+         <a href="/index.php"><li style="padding-left: 40px;">Home</li></a>
          <a href="index.php?p=about"><li style="padding-left: 40px;">About Me</li></a>
          <a href="index.php?p=portfolio"><li style="padding-left: 40px;">Portfolio</li></a>
        </ul>
@@ -44,7 +45,20 @@
          <a href="index.php?p=support"><li style="padding-left: 40px;">Support<i class="material-icons open-header-icons">help</i></li></a>
        </ul>
      </ul>
-     <div class="nav-slider" style="top: 214px;"></div>
+     <div class="nav-slider"
+        <?php
+        if ($thisPage=="home") {
+        echo 'style="top: 60px"';
+      } else if ($thisPage=="about") {
+        echo 'style="top: 110px"';
+      } else if ($thisPage=="contact") {
+        echo 'style="top: 406px"';
+      }
+
+
+      ?>
+
+      ></div>
    </div>
  </div>
  <div class="logout-background">
