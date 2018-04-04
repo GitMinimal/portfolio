@@ -44,7 +44,7 @@
 
     public static function createRecord($dbh, $user_id, $user_username) {
 
-      $query = "INSERT INTO sessions (session_userid, session_token, session_serial) VALUES (:user_id, :token, :serial);";
+      $query = "INSERT INTO sessions (session_userid, session_token, session_serial) VALUES (:userid, :token, :serial);";
 
       $dbh->prepare("DELETE FROM sessions WHERE session_userid = :session_userid;")->execute(array(':session_userid' => $user_id));
 
@@ -121,7 +121,7 @@
   }
 
   function redirect() {
-    header('location: http://www.localhost/index.php');
+    header('location: /index.php');
   }
 
 

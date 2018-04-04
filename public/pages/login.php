@@ -2,11 +2,9 @@
 <section class="parent">
   <section class="child">
     <?php
-    $thisPage="Log In";
 
     if(isset($_SESSION['username'])) {
       redirect();
-      exit;
     }
 
       if (!func::checkLoginState($dbh)) {
@@ -25,9 +23,8 @@
 
           if ($row['user_id'] > 0) {
             func::createRecord($dbh, $row['user_id'], $row['user_username']);
-            header("location:../index.php");
-
-            echo func::createString(32);
+            header("location: /index.php");
+            func::createString(32);
           }
 
       }

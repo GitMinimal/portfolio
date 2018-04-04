@@ -63,32 +63,49 @@ header
       p
         padding: 5px
 
+#currentpage
+
+  p
+    color: #0091ea
+    border-bottom: 2px solid #0091ea
 
 .navigation
   display: flex
   width: 100%
-  height: 40px
   border-bottom: 1px solid rgb(237, 237, 237)
-
-  .navigation-button-container
-    visibility: hidden
-    width: 40px
-    height: 40px
-
-    li
-      width: 24px
-      margin: 4px
-      height: 3px
-      background-color: #757575
-      list-style: none
 
   ul
     width: 100%
     height: 40px
     display: flex
+    align-items: center
     list-style: none
     justify-content: space-evenly
     padding-left: 0px
+    text-decoration: none
+    margin: 0px
+
+    a
+
+      li
+        height: 40px
+        display: flex
+        align-items: center
+        padding: 0px 10px 0px 10px
+
+        p
+          text-decoration: none
+          color: #616161
+          transition: all 100ms cubic-bezier(0.265, 0.390, 0.245, 0.880)
+          border-bottom: 2px solid transparent
+
+        &:hover
+
+          p
+            color: #0091ea
+            border-bottom: 2px solid #0091ea
+            transition: all 100ms cubic-bezier(0.265, 0.390, 0.245, 0.880)
+
 
 @media only screen and (max-width: 690px)
   .navigation
@@ -472,6 +489,13 @@ a
 
 input:-webkit-autofill
   -webkit-box-shadow: 0 0 0 50px white inset
+
+.logout
+  width: 100%
+  height: 100%
+  background-repeat: repeat repeat
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.19)),url(/assets/pattern-1.png)
+
 
 
 

@@ -23,7 +23,7 @@ $(".nav-links ul li").mouseover(function () {
     }, 250);
 });
 
-
+/*
 $('#logout').click (function (e) {
    e.preventDefault();
    setTimeout(function () {
@@ -46,3 +46,4 @@ $('#logout').click (function (e) {
 document.getElementById("timer").innerHTML=count;
 }
 });
+*/

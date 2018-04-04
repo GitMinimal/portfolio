@@ -20,7 +20,7 @@ if (!empty($_GET['p'])) {
 
         ?>
         <?php
-      //  echo func::createString(32);
+       //echo func::createString(32);
 
           $pages_dir = 'pages';
 
