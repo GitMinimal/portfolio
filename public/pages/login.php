@@ -1,4 +1,4 @@
-<?php include_once("includes/header.php")?>
+<?php include_once("../includes/header.php")?>
 <section class="parent">
   <section class="child">
     <?php
@@ -63,4 +63,4 @@
 </section>
 </section>
 
-<?php include_once("includes/footer.php"); ?>
+<?php include_once("../includes/footer.php"); ?>
