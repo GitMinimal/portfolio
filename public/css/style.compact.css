@@ -124,6 +124,10 @@ a { text-decoration: none; }
 
 #login #login-panel form { padding-top: 15px; }
 
+#login #login-panel form #login-error { margin: auto; height: 25px; width: 100%; margin-bottom: 20px; }
+
+#login #login-panel form #login-error p { text-algin: center; font-size: 15px; color: red; }
+
 #login #login-panel form input#username { background-image: url(../assets/icon_login_user.svg); background-repeat: no-repeat; background-position: 6px; margin-top: 10px; padding-left: 35px; font-size: 14px; }
 
 #login #login-panel form input#password { background-image: url(../assets/icon_lock_outline.svg); background-repeat: no-repeat; background-position: 6px; margin-top: 10px; padding-left: 35px; font-size: 14px; }

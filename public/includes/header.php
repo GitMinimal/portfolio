@@ -1,5 +1,12 @@
 <?php ob_start(); ?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/portfolio/auth/functions.php'; include_once $_SERVER['DOCUMENT_ROOT'] . '/portfolio/auth/config.php'; ?>
+<?php
+
+if (!isset ($thisPage)) {
+  $thisPage = null;
+};
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,8 +55,11 @@
      </ul>
      <div class="nav-slider"
         <?php
-        if ($thisPage=="home") {
-        echo 'style="top: 60px"';
+
+      if ($thisPage == null) {
+        echo 'style="top: 69px"';
+      } else if ($thisPage=="home") {
+        echo 'style="top: 69px"';
       } else if ($thisPage=="about") {
         echo 'style="top: 110px"';
       } else if ($thisPage=="portfolio") {
@@ -57,6 +67,8 @@
       } else if ($thisPage=="contact") {
         echo 'style="top: 406px"';
       } else if ($thisPage=="support") {
+        echo 'style="top: 447px"';
+      } else if ($thisPage=="other") {
         echo 'style="top: 447px"';
       } ?>
       ></div>
@@ -71,9 +83,6 @@
        </div>
      </div>
    </div>
-
-
-
 
   <div class="shadow">
   </div>
