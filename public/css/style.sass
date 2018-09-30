@@ -9,6 +9,9 @@ html
 
 body
   margin: 71px 60px 0px 60px !important
+  min-height: 100vw
+  overflow: hidden
+  background-color: #FFFF
 
 *
   box-sizing: border-box
@@ -18,6 +21,13 @@ body
 
   &::before
     box-sizing: inherit
+
+
+#page-container
+    display: flex
+    width: 100vw
+    height: 100vh
+    max-width: 100%
 
 
 header
@@ -129,13 +139,6 @@ header
       width: 500px
       align-self: center
 
-
-
-
-
-
-
-
 #header-username
   padding-right: 20px
   color: #616161 !important
@@ -240,7 +243,7 @@ a
   height: 100%
   background-color: #fff
   box-shadow: 3px 0 10px 0 rgba(0,0,0,0.28)
-  z-index: 2
+  z-index: 100
   left: -300px
   transition: all 500ms cubic-bezier(0.365, 0.680, 0.335, 0.945)
 
@@ -367,7 +370,7 @@ a
   display: flex
 
 .float-right
-  float: right!important
+  float: right !important
 
 
 #nav-name
@@ -380,30 +383,28 @@ a
     font-size: 16px
     border-bottom: none !important
 
+
 #login
-  display: flex
-  align-items: center
-  flex-direction: column
   margin: auto
   text-align: center
   cursor: default
+  padding-bottom: 35vh
 
   #login-panel
     display: flex
     flex-direction: column
-    min-width: 30vw
     height: 300px
     padding: 40px
     margin: 20px
-    border: 1px solid #e5e5e5
+    width: 400px
+
+    @media screen and (max-width: 1200px)
+      max-width: 50vw
 
     p
       font-size: 2em
-      text-transform: uppercase
-      color: #616161
+      color: rgba(0, 0, 0, 0.44)
       cursor: default
-
-
 
     form
       padding-top: 15px
@@ -415,26 +416,38 @@ a
         margin-bottom: 20px
 
         p
-          text-algin: center
           font-size: 15px
-          color: red
+          color: rgba(0, 0, 0, 0.44)
 
+      input::placeholder
 
-      input#username
-        background-image: url(../assets/icon_login_user.svg)
-        background-repeat: no-repeat
-        background-position: 6px
-        margin-top: 10px
-        padding-left: 35px
-        font-size: 14px
+        font-weight: bold
+        font-size: 13px
+        color: rgba(0, 0, 0, 0.44)
 
-      input#password
-        background-image: url(../assets/icon_lock_outline.svg)
-        background-repeat: no-repeat
-        background-position: 6px
-        margin-top: 10px
-        padding-left: 35px
-        font-size: 14px
+      input
+        color: rgba(0, 0, 0, 0.44) !important
+
+        #username
+          background: transparent
+          background-repeat: no-repeat
+          background-position: 6px
+          margin-top: 10px
+          font-size: 14px
+
+          &:focus
+            background-color: #e5e5e5
+
+        #password
+          background: transparent
+          background-repeat: no-repeat
+          background-position: 6px
+          margin-top: 10px
+          font-size: 14px
+
+          &:focus
+            background-color: #e5e5e5
+
 
 
       #remember_me_checkbox
@@ -477,10 +490,9 @@ a
       input
         outline: none
         display: block
-        background: #FFFFFF
         width: 100%
-        border: 1px solid rgb(229, 229, 229)
-        border-radius: 4px
+        border: 0px
+        border-bottom: 1px solid #e5e5e5
         box-sizing: border-box
         margin-top: 5px
         padding: 12px 20px
@@ -489,13 +501,18 @@ a
         transition: 0.3s ease
         cursor: pointer
         color: #616161
+        background-color: transparent
+
+        &:hover
+          background-color: #e5e5e5
 
 #login_button
   color: #616161
+  border: 1px solid #e5e5e5 !important
 
   &:hover
     transition: 0.3s ease
-    border-color: #0ebeff !important
+    //border-color: #0ebeff !important
     color: #0ebeff
 
 
@@ -554,3 +571,25 @@ footer
   min-height: 1px
   padding-right: 15px
   padding-left: 15px
+
+
+
+
+
+  //MISC
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+
+  100%
+    transform: rotate(360deg)
+
+
+.loader
+  border: 3px solid #f3f3f3
+  border-top: 3px solid #3498db
+  border-radius: 50%
+  width: 25px
+  height: 25px
+  animation: spin 0.8s linear infinite

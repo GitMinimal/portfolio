@@ -23,11 +23,11 @@ $(".nav-links ul li").mouseover(function () {
     }, 250);
 });
 
-/*
-$('#logout').click (function (e) {
+
+/*$('#logout').click (function (e) {
    e.preventDefault();
    setTimeout(function () {
-       window.location.href = "../pages/logout.inc.php";
+       window.location.href = "../pages/logout_handler.inc.php";
     }, 5000);
     $(".logout-background").css('visibility', 'visible');
     $(".logout_timer_page").css('visibility', 'visible');
@@ -45,5 +45,4 @@ $('#logout').click (function (e) {
 }
 document.getElementById("timer").innerHTML=count;
 }
-});
-*/
+}); */

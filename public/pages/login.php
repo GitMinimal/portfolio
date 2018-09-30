@@ -1,41 +1,62 @@
 <?php include_once("../includes/header.php")?>
 <?php include_once("../../auth/functions.php")?>
 
+<? $thisPage == "login"; ?>
 
-
-<section class="parent">
-  <section class="child">
+<div id="page-container">
 <?php
+          $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+          if (strpos($fullUrl, "login.php?signin=error") == true) {
+              echo'
+                  <div id="login">
+                  <div id="login-panel">
+                  <p style="padding: 0px; margin: 0px;">Member Login</p>
+                  <div id="login-error"><p style=" color: red; font-size: 15px; visibility: visible">Invalid Login Credentials</p></p></div>
+                  <form action="../includes/login_handler.php" autocomplete="off" method="post">
+                    <input style="color: red; font-size: 16px" placeholder="Username" maxlength="40" type="text"  id="username" name="username"/> <br/>
+                    <input style="color: red; font-size: 16px" placeholder="Password" type="password" id="password" name="password"/></br>
+                    <input id="login_button" type="submit" maxlength="50" value="Login" name="Login"/>
 
-  if(isset($_SESSION['username'])) {
-      redirect();
-    }
+                    <div id="remember_me_checkbox">
+                    <input type="checkbox" name="remember" value="checked">
+                    <l for="rememberme">Remember Me</l>
+                    </div>
+                    <div id="forgot_password"><div><a><i>Forgot Password?</i></a></div></div>
+                  </form>
+                  </div>
+                  </div>
+                ';
+              exit();
+            }
+            else {
+              if (strpos($fullUrl, "login.php?signin=successful") == true) {
+                header("location: /index.php");
+              } else {
+              echo'
+                  <div id="login">
+                  <div id="login-panel">
+                  <p style="padding: 0px; margin: 0px;">Member Login</p>
+                  <div id="login-error"><p style="font-size: 15px; visibility: hidden"> </p></p></div>
+                  <form action="../includes/login_handler.php" autocomplete="off" method="post">
+                    <input style="font-size: 16px" placeholder="Username" maxlength="40" type="text"  id="username" name="username"/> <br/>
+                    <input style="font-size: 16px" placeholder="Password" type="password" id="password" name="password"/></br>
+                    <input id="login_button" type="submit" maxlength="50" value="Login" name="Login"/>
 
-      if (!func::checkLoginState($dbh)) {
+                    <div id="remember_me_checkbox">
+                    <input type="checkbox" name="remember" value="checked">
+                    <l for="rememberme">Remember Me</l>
+                    </div>
+                    <div id="forgot_password"><div><a><i>Forgot Password?</i></a></div></div>
+                  </form>
+                  </div>
+                  </div>
+                ';
+              }
+            }
+?>
 
-        if (isset($_POST['username']) && isset($_POST['password'])) {
 
-          $query = "SELECT * FROM users WHERE user_username = :username AND user_password = :password";
 
-          $username = $_POST['username'];
-          $password = $_POST['password'];
-
-          $stmt = $dbh->prepare($query);
-          $stmt->execute(array(':username' => $username, ':password' => $password));
-
-          $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-          if ($row['user_id'] > 0) {
-            func::createRecord($dbh, $row['user_id'], $row['user_username']);
-            header("location: /index.php");
-            func::createString(32);
-          }
-        }
-      }
-
-      loginErrorCheck();
-    ?>
-</section>
-</section>
-
-<?php include_once("../includes/footer.php"); ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/portfolio/public/js/style.js"></script>
+</div>

@@ -1,12 +1,14 @@
 html { margin: 0px; padding: 0px; font-family: Roboto, sans-serif, Arial; -webkit-font-smoothing: antialiased !important; font-size: 13px; color: #616161; background-color: rgba(43, 43, 43, 0.04); }
 
-body { margin: 71px 60px 0px 60px !important; }
+body { margin: 71px 60px 0px 60px !important; min-height: 100vw; overflow: hidden; background-color: #FFFF; }
 
 * { box-sizing: border-box; }
 
 *::after { box-sizing: inherit; }
 
 *::before { box-sizing: inherit; }
+
+#page-container { display: flex; width: 100vw; height: 100vh; max-width: 100%; }
 
 header { background: #fff; color: #616161; font-family: Roboto,Arial,sans-serif; font-size: 12px; height: 56px; left: 0; padding: 0; position: fixed; right: 0; top: 0; transition: margin-top 240ms cubic-bezier(0.4, 0, 0.2, 1); z-index: 103; border-bottom: 1px solid #ededed; }
 
@@ -74,7 +76,7 @@ a { text-decoration: none; }
 
 .shadow { position: fixed; padding: 0px; margin: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.44); visibility: hidden; transition: opacity 240ms cubic-bezier(0.4, 0, 0.2, 1); }
 
-#nav-open { position: fixed; width: 256px; height: 100%; background-color: #fff; box-shadow: 3px 0 10px 0 rgba(0, 0, 0, 0.28); z-index: 2; left: -300px; transition: all 500ms cubic-bezier(0.365, 0.68, 0.335, 0.945); }
+#nav-open { position: fixed; width: 256px; height: 100%; background-color: #fff; box-shadow: 3px 0 10px 0 rgba(0, 0, 0, 0.28); z-index: 100; left: -300px; transition: all 500ms cubic-bezier(0.365, 0.68, 0.335, 0.945); }
 
 .nav-open-container { display: flex; justify-content: space-between; align-items: center; padding: 4px; border-bottom: 1px solid #ededed; height: 57px; cursor: pointer; }
 
@@ -116,21 +118,31 @@ a { text-decoration: none; }
 
 #nav-name span { padding: 0px !important; text-align: center; color: #616161; font-family: Roboto; font-size: 16px; border-bottom: none !important; }
 
-#login { display: flex; align-items: center; flex-direction: column; margin: auto; text-align: center; cursor: default; }
+#login { margin: auto; text-align: center; cursor: default; padding-bottom: 35vh; }
 
-#login #login-panel { display: flex; flex-direction: column; min-width: 30vw; height: 300px; padding: 40px; margin: 20px; border: 1px solid #e5e5e5; }
+#login #login-panel { display: flex; flex-direction: column; height: 300px; padding: 40px; margin: 20px; width: 400px; }
 
-#login #login-panel p { font-size: 2em; text-transform: uppercase; color: #616161; cursor: default; }
+@media screen and (max-width: 1200px) { #login #login-panel { max-width: 50vw; } }
+
+#login #login-panel p { font-size: 2em; color: rgba(0, 0, 0, 0.44); cursor: default; }
 
 #login #login-panel form { padding-top: 15px; }
 
 #login #login-panel form #login-error { margin: auto; height: 25px; width: 100%; margin-bottom: 20px; }
 
-#login #login-panel form #login-error p { text-algin: center; font-size: 15px; color: red; }
+#login #login-panel form #login-error p { font-size: 15px; color: rgba(0, 0, 0, 0.44); }
 
-#login #login-panel form input#username { background-image: url(../assets/icon_login_user.svg); background-repeat: no-repeat; background-position: 6px; margin-top: 10px; padding-left: 35px; font-size: 14px; }
+#login #login-panel form input::placeholder { font-weight: bold; font-size: 13px; color: rgba(0, 0, 0, 0.44); }
 
-#login #login-panel form input#password { background-image: url(../assets/icon_lock_outline.svg); background-repeat: no-repeat; background-position: 6px; margin-top: 10px; padding-left: 35px; font-size: 14px; }
+#login #login-panel form input { color: rgba(0, 0, 0, 0.44) !important; }
+
+#login #login-panel form input #username { background: transparent; background-repeat: no-repeat; background-position: 6px; margin-top: 10px; font-size: 14px; }
+
+#login #login-panel form input #username:focus { background-color: #e5e5e5; }
+
+#login #login-panel form input #password { background: transparent; background-repeat: no-repeat; background-position: 6px; margin-top: 10px; font-size: 14px; }
+
+#login #login-panel form input #password:focus { background-color: #e5e5e5; }
 
 #login #login-panel form #remember_me_checkbox { display: inline-block; float: left; padding-top: 10px; }
 
@@ -146,11 +158,13 @@ a { text-decoration: none; }
 
 #login #login-panel form div div a i:hover { transition: 0.3s ease; color: #0ebeff; }
 
-#login #login-panel form input { outline: none; display: block; background: #FFFFFF; width: 100%; border: 1px solid #e5e5e5; border-radius: 4px; box-sizing: border-box; margin-top: 5px; padding: 12px 20px; font-size: 14px; line-height: inherit; transition: 0.3s ease; cursor: pointer; color: #616161; }
+#login #login-panel form input { outline: none; display: block; width: 100%; border: 0px; border-bottom: 1px solid #e5e5e5; box-sizing: border-box; margin-top: 5px; padding: 12px 20px; font-size: 14px; line-height: inherit; transition: 0.3s ease; cursor: pointer; color: #616161; background-color: transparent; }
 
-#login_button { color: #616161; }
+#login #login-panel form input:hover { background-color: #e5e5e5; }
 
-#login_button:hover { transition: 0.3s ease; border-color: #0ebeff !important; color: #0ebeff; }
+#login_button { color: #616161; border: 1px solid #e5e5e5 !important; }
+
+#login_button:hover { transition: 0.3s ease; color: #0ebeff; }
 
 input:-webkit-autofill { -webkit-box-shadow: 0 0 0 50px white inset; }
 
@@ -171,3 +185,8 @@ footer #footer a { display: block; color: #616161; text-decoration: none; }
 footer #footer a:hover { color: #0ebeff; transition: ease-in-out 0.2s; }
 
 .col-lg-3 { margin: auto; padding: 10px; position: relative; width: 100%; min-height: 1px; padding-right: 15px; padding-left: 15px; }
+
+@keyframes spin { 0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); } }
+
+.loader { border: 3px solid #f3f3f3; border-top: 3px solid #3498db; border-radius: 50%; width: 25px; height: 25px; animation: spin 0.8s linear infinite; }
