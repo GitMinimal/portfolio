@@ -1,7 +1,4 @@
 <?php
-
-
-
 session_start();
 $_SESSION = array();
 if (ini_get("session.use_cookies")) {
@@ -13,6 +10,22 @@ if (ini_get("session.use_cookies")) {
 }
 session_unset();
 session_destroy();
-     header('Location: index.php?p=logout'); ?>
+     header('Location: index.php?p=logout');
+
+     require $_SERVER['DOCUMENT_ROOT']."/portfolio/auth/Util.php";
+     $util = new Util();
+
+     $_SESSION["member_id"] = "";
+      session_unset();
+      session_destroy();
+
+     $util->clearAuthCookie();
+
+     header("Location: ./");
+?>
+
+
+
+
 
 <section class="logout"></section>

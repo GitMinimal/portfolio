@@ -1,7 +1,6 @@
-<?php ob_start(); ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/portfolio/auth/functions.php'; include_once $_SERVER['DOCUMENT_ROOT'] . '/portfolio/auth/config.php'; ?>
-<?php
 
+<?php
+ob_start();
 if (!isset ($thisPage)) {
   $thisPage = null;
 };
@@ -104,12 +103,10 @@ if (!isset ($thisPage)) {
           <?php
 
           if(!isset($_SESSION)){
-
             session_start();
-
-            if(!empty($_SESSION['username'])) {
-                echo '<l style="color: #464d51">Welcome, </l>'. '<l id="header-username">' .ucfirst($_SESSION['username']) . '!</l>';
-                echo '<a id="logout" href="index.php?p=logout_handler"><i class="material-icons">power_settings_new</i></a>';
+            if(!empty($_COOKIE['member_login'])) {
+                echo '<l style="color: #464d51">Welcome, </l>'. '<l id="header-username">' .ucfirst($_COOKIE['member_login']) . '!</l>';
+                echo '<a id="logout" href="index.php?p=logout"><i class="material-icons">power_settings_new</i></a>';
               } else {
                 echo '<a href="/pages/login.php">Login</a><p>|</p><a href="/pages/register.php">Register</a>';
               }

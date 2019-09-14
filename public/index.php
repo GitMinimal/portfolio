@@ -1,24 +1,15 @@
 <?php
+//Sets page to home
 $thisPage = "home";
 if (!empty($_GET['p'])) {
   $thisPage = $_GET['p'];
 }
 
 ?>
-<?php include_once 'includes/header.php'; ?>
+<?php include_once 'core/header.php'; ?>
       <section class="parent">
-        <?php include_once 'includes/nav.php';?>
+        <?php include_once 'core/nav.php';?>
         <section class="child">
-
-        <?php
-
-          if (!func::checkLoginState($dbh)) {
-          }
-          else {
-            header("location:/pages/login.php");
-          }
-
-        ?>
         <?php
        //echo func::createString(32);
 
@@ -38,9 +29,9 @@ if (!empty($_GET['p'])) {
           } else {
               include($pages_dir.'/home.inc.php');
             }
-        ?>
+  ?>
       </section>
      </section>
 
 
-<?php include_once 'includes/footer.php'; ?>
+<?php include_once 'core/footer.php'; ?>
