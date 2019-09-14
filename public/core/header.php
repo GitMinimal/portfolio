@@ -104,8 +104,8 @@ if (!isset ($thisPage)) {
 
           if(!isset($_SESSION)){
             session_start();
-            if(!empty($_COOKIE['member_login'])) {
-                echo '<l style="color: #464d51">Welcome, </l>'. '<l id="header-username">' .ucfirst($_COOKIE['member_login']) . '!</l>';
+            if(!empty($_SESSION['member_name'])) {
+                echo '<l style="color: #464d51">Welcome, </l>'. '<l id="header-username">' .ucfirst($_SESSION['member_name']) . '!</l>';
                 echo '<a id="logout" href="index.php?p=logout"><i class="material-icons">power_settings_new</i></a>';
               } else {
                 echo '<a href="/pages/login.php">Login</a><p>|</p><a href="/pages/register.php">Register</a>';
